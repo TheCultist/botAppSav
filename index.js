@@ -12,16 +12,26 @@ server.listen(process.env.port || process.env.PORT || 3978, '::', () => {
     console.log('Server Up');
 });
 
+let address;
+
+function sendProactiveMessage(address){
+    var msg = new builder.Message().address(address);
+    msg.text("Notification");
+    msg.textLocale("en-US");
+    bot.send(msg);
+}
+
 /* bot.dialog('/', function(session){
     session.send('Hello World');
 }); */
 
 bot.dialog('/', [ 
     function(session){
-        session.beginDialog('/askName');
-    },
-    function (session,results) {
-        session.send('Hello %s!', results.response);
+        address = session.message.address;
+        session.send("Hi");
+        setTimeout(() => {
+            sendProactiveMessage(address);
+        }, 5000);
     }
 ]);
 
