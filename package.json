@@ -11,5 +11,14 @@
   "dependencies": {
     "botbuilder": "^3.8.4",
     "restify": "^5.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCultist/botAppSav.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheCultist/botAppSav/issues"
+  },
+  "homepage": "https://github.com/TheCultist/botAppSav#readme"
 }
